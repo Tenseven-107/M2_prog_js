@@ -1,5 +1,6 @@
 class App
 {
+    // Running application
     runApplication()
     {
         console.log("START");
@@ -45,7 +46,14 @@ class App
         g.fill()
 
         g.beginPath()
-        g.fillStyle = "Black";
+
+        let randnumber = Math.random(); // rand number
+        if (randnumber <= 0.5) {
+            g.fillStyle = "Black";
+        } else {
+            g.fillStyle = "Yellow";
+        }
+
         g.moveTo(325, 300);
         g.lineTo(325, 412);
         g.lineTo(275, 438);
@@ -55,7 +63,14 @@ class App
         g.fill()
 
         g.beginPath()
-        g.fillStyle = "Blue";
+
+        let randnumber2 = Math.random(); // rand number
+        if (randnumber2 <= 0.5) {
+            g.fillStyle = "Blue";
+        } else {
+            g.fillStyle = "Yellow";
+        }
+
         g.moveTo(303, 150);
         g.lineTo(275, 275);
         g.lineTo(325, 250);
