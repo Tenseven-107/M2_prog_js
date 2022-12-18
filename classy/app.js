@@ -39,10 +39,10 @@ class Plant
 // Run
 class App
 {
-    constructor(dinos = [], plants = [])
+    constructor()
     {
-        this.plants = plants;
-        this.dinos = dinos;
+        this.plants = [];
+        this.dinos = [];
     }
 
     runApplication()
