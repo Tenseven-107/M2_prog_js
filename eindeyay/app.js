@@ -1,7 +1,7 @@
 import {HouseRenderer} from "./HouseRenderer.js"
 import {TreeRenderer, TreeRenderer2} from "./TreeRenderer.js"
 import { SnowmanRenderer } from "./SnowmanRenderer.js";
-import { UfoRenderer } from "./UfoRenderer.js";
+//import { UfoRenderer } from "./UfoRenderer.js";
 
 
 class App
@@ -12,19 +12,13 @@ class App
 
         let g = canvas.getContext("2d");
 
-        this.drawRect(g,0,10);
         this.drawField(g, canvas);
-        this.drawUfo(g, canvas);
-    }
-
-    drawRect(g,x,y)
-    {
-        g.fillRect(x,y,10,10)
+        //this.drawUfo(g, canvas);
     }
 
     drawField(g, canvas)
     {
-        let num = 100
+        let num = 1
 
         let houserenderer = new HouseRenderer();
         let treerenderer = new TreeRenderer();
@@ -46,6 +40,10 @@ class App
                 this.drawObject(snowmanrenderer, g, canvas)
             }
         }
+
+        g.font = "100px Verdana"
+        g.fillStyle = "#000000"
+        g.fillText("MERRY CHRISTMAS!", 40, 80);
     }
 
     drawObject(object, g, canvas)
@@ -56,16 +54,16 @@ class App
         object.draw(g,x,y)
     }
 
-    drawUfo(g, canvas)
-    {
-        let uforenderer = new UfoRenderer();
+    //drawUfo(g, canvas)
+    //{
+        //let uforenderer = new UfoRenderer();
 
-        let y = canvas.width / 2;
-        let x = canvas.width / 2;
+        //let y = canvas.width / 2;
+        //let x = canvas.width / 2;
 
-        uforenderer.draw(g,x,y, canvas)
-        print
-    }
+        //uforenderer.draw(g,x,y, canvas)
+        //print
+    //}
 }
 
 
