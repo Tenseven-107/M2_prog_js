@@ -1,6 +1,7 @@
 import {HouseRenderer} from "./HouseRenderer.js"
 import {TreeRenderer, TreeRenderer2} from "./TreeRenderer.js"
 import { SnowmanRenderer } from "./SnowmanRenderer.js";
+import { RockRenderer, Rock2Renderer, GrassRenderer } from "./VegetationRenderer.js";
 
 
 class App
@@ -23,6 +24,9 @@ class App
         let treerenderer = new TreeRenderer();
         let treerenderer2 = new TreeRenderer2();
         let snowmanrenderer = new SnowmanRenderer();
+        let rockrenderer = new RockRenderer();
+        let rock2renderer = new Rock2Renderer();
+        let grassrenderer = new GrassRenderer();
 
         let width = canvas.clientWidth;
         let height = canvas.clientHeight;
@@ -36,6 +40,14 @@ class App
         this.drawObject(125, height / 4, houserenderer, g);
         this.drawObject(575, height / 3, houserenderer, g);
         this.drawObject(1025, height / 2, houserenderer, g);
+
+        this.drawObject(120, 360, rockrenderer, g);
+        this.drawObject(360, 380, rock2renderer, g);
+        this.drawObject(360, 380, grassrenderer, g);
+        this.drawObject(1000, 450, grassrenderer, g);
+        this.drawObject(800, 210, grassrenderer, g);
+        this.drawObject(1500, 900, rock2renderer, g);
+        this.drawObject(1425, 820, rockrenderer, g);
 
         this.drawText(width, height, g);
     }
@@ -73,6 +85,7 @@ class App
         g.font = "100px Verdana"
         g.fillStyle = "#000000"
         g.fillText("MERRY CHRISTMAS!", width / 6, height / 6);
+        g.fillText("_______________", width / 6, (height / 6) + 25);
     }
 }
 
